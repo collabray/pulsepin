@@ -1,0 +1,12 @@
+{
+  "n_train": 244,
+  "n_test": 61,
+  "n_classes": 41,
+  "n_symptoms": 132,
+  "cv_accuracy_mean": 0.9224489795918368,
+  "cv_accuracy_std": 0.05685056439666989,
+  "test_accuracy": 0.9836065573770492,
+  "test_top3_accuracy": 1.0,
+  "test_macro_f1": 0.9674796747967479,
+  "test_log_loss": 0.4473961442014099
+}

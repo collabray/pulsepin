@@ -1,0 +1,15 @@
+{
+  "n_rows_total": 305,
+  "n_rows_unique": 305,
+  "duplicate_row_ratio": 0.0,
+  "n_classes": 41,
+  "n_symptoms": 132,
+  "rows_per_class_min": 5,
+  "rows_per_class_max": 10,
+  "class_balance_coefficient_of_variation": 0.225,
+  "unique_symptom_patterns_per_class_mean": 7.44,
+  "unique_symptom_patterns_per_class_min": 5,
+  "warnings": [
+    "Only ~7 distinct symptom patterns per disease on average. This is characteristic of a textbook/checklist-style dataset rather than messy real clinical presentations, and will understate the ambiguity real patients present with. Do not deploy against real patients without retraining on a larger, more clinically representative dataset (see app/ml/load_ddxplus.py)."
+  ]
+}

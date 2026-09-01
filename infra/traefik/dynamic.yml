@@ -1,0 +1,44 @@
+# Dynamic middleware (Security Architecture Section 3):
+#   - rate-limit: coarse edge-level rate limiting (in addition to, not
+#     instead of, the application-level per-endpoint limits in
+#     app.core.rate_limit — defense in depth).
+#   - security-headers: HSTS, frame options, content-type sniffing
+#     protection at the edge, mirrored at the app level too.
+#   - admin-ipallowlist: restricts the dispatcher dashboard and Traefik's
+#     own dashboard to an operator-configured network. Replace
+#     sourceRange with your real office/VPN CIDR before deploying; the
+#     default (empty) blocks everyone until configured, rather than
+#     silently allowing all traffic — a fail-closed default.
+
+http:
+  middlewares:
+    rate-limit:
+      rateLimit:
+        average: 20
+        burst: 40
+        period: 1s
+
+    security-headers:
+      headers:
+        stsSeconds: 63072000
+        stsIncludeSubdomains: true
+        stsPreload: true
+        frameDeny: true
+        contentTypeNosniff: true
+        referrerPolicy: "strict-origin-when-cross-origin"
+        customResponseHeaders:
+          Permissions-Policy: "geolocation=(self)"
+
+    admin-ipallowlist:
+      ipAllowList:
+        sourceRange: []
+        # Example (uncomment and set to your real network before deploying
+        # the dispatcher dashboard publicly):
+        # sourceRange:
+        #   - "203.0.113.0/24"
+
+    dispatch-trigger-strict-rate-limit:
+      rateLimit:
+        average: 1
+        burst: 3
+        period: 60s
