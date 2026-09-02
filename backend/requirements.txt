@@ -25,3 +25,4 @@ pytest-asyncio==0.24.0
 pyjwt==2.9.0
 pyotp==2.9.0
 cryptography==43.0.1
+imbalanced-learn==0.12.4
