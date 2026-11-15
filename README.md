@@ -147,7 +147,7 @@ Live dispatch will not start unless `ENABLE_LIVE_DISPATCH=true` **and** `SECURIT
 
 We are seeking **investors, hospital and ambulance-service pilot partners, clinical advisors, and grant funders** who want to make emergency response faster, fairer, and harder to abuse.
 
-**Contact:** [name] · [email] · [website]
+**Contact:**  · bensonray25@gmmail.com
 
 ---
 
